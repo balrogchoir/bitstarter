@@ -11,7 +11,7 @@ var content=bf.toString();
 //console.log(content);
 
 app.get('/', function(request, response) {
-  //response.send('Hello World2!');
+  response.send('Hello World2!');
 //  response.write(content);
 });
 
