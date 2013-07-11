@@ -4,19 +4,15 @@ var app = express.createServer(express.logger());
 
 var fs=require('fs');
 
-var bf=fs.readFileSync('./index.html');
-
-var content=bf.toString();
-
-//console.log(content);
+var content=fs.readFileSync('./index.html','utf-8');
 
 app.get('/', function(request, response) {
-  response.send('Hello World2!');
+  response.send(content);
 //  response.write(content);
 });
 
 var port = process.env.PORT || 5000;
 app.listen(port, function() {
   console.log("Listening on " + port);
-  console.log(content);
+//  console.log(content);
 });
